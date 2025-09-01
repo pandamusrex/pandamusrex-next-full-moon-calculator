@@ -24,6 +24,8 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
 
+require_once( plugin_dir_path(__FILE__) . 'includes/widget.php' );
+
 class PandamusRex_Next_Full_Moon_Calculator {
     private static $instance;
 
@@ -39,6 +41,11 @@ class PandamusRex_Next_Full_Moon_Calculator {
     public function __wakeup() {}
 
     public function __construct() {
+        add_action( 'widgets_init', [ $this, 'widgets_init' ] );
+    }
+
+    public function widgets_init() {
+        register_widget( 'Hot_Sheet_Widget' );
     }
 }
 
