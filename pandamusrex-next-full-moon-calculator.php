@@ -25,6 +25,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 require_once( plugin_dir_path(__FILE__) . 'includes/widget.php' );
+require_once( plugin_dir_path(__FILE__) . 'includes/math.php' );
 
 class PandamusRex_Next_Full_Moon_Calculator {
     private static $instance;

@@ -25,10 +25,25 @@ class PandamusRex_Next_Full_Moon_Widget extends WP_Widget {
             echo $before_title . $title . $after_title;
         }
 
-        echo esc_html__(
-            "XX days until the next full moon!",
-            'pandamusrex-next-full-moon-calculator'
-        );
+        $num_days_until_next_full_moon = PandamusRex_Next_Full_Moon_Math::getNumDaysUntilNextFullMoon();
+
+        if ( $num_days_until_next_full_moon == 0 ) {
+            $big_text = __( 'Today!', 'pandamusrex-next-full-moon-calculator' );
+            $sub_text = __( 'Today is the next full moon! Awooo!', 'pandamusrex-next-full-moon-calculator' );
+        } else {
+            $big_text = sprintf(
+                __( '%d Days', 'pandamusrex-next-full-moon-calculator' ),
+                $num_days_until_next_full_moon
+            );
+            $sub_text = __( 'Until the next full moon. Rawr.', 'pandamusrex-next-full-moon-calculator' );
+        }
+
+        echo '<p class="pandamusrex-next-full-moon-big-text">';
+        echo esc_html( $big_text );
+        echo '</p>';
+        echo '<p class="pandamusrex-next-full-moon-sub-text">';
+        echo esc_html( $sub_text );
+        echo '</p>';
 
         echo $after_widget;
     }
