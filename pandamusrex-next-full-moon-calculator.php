@@ -43,10 +43,18 @@ class PandamusRex_Next_Full_Moon_Calculator {
 
     public function __construct() {
         add_action( 'widgets_init', [ $this, 'widgets_init' ] );
+        add_action( 'wp_enqueue_scripts', [ $this, 'enqueue_scripts' ] );
     }
 
     public function widgets_init() {
         register_widget( 'PandamusRex_Next_Full_Moon_Widget' );
+    }
+
+    public function enqueue_scripts() {
+        wp_enqueue_style(
+            'pandamusrex-next-full-moon-widget-styles',
+            plugin_dir_path( __FILE__ ) . 'css/widget-styles.css'
+        );
     }
 }
 

@@ -35,7 +35,7 @@ class PandamusRex_Next_Full_Moon_Widget extends WP_Widget {
                 __( '%d Days', 'pandamusrex-next-full-moon-calculator' ),
                 $num_days_until_next_full_moon
             );
-            $sub_text = __( 'Until the next full moon. Rawr.', 'pandamusrex-next-full-moon-calculator' );
+            $sub_text = __( 'Until the next full moon! Rawr!', 'pandamusrex-next-full-moon-calculator' );
         }
 
         echo '<p class="pandamusrex-next-full-moon-big-text">';
