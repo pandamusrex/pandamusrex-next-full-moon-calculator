@@ -45,7 +45,7 @@ class PandamusRex_Next_Full_Moon_Calculator {
     }
 
     public function widgets_init() {
-        register_widget( 'Hot_Sheet_Widget' );
+        register_widget( 'PandamusRex_Next_Full_Moon_Widget' );
     }
 }
 
